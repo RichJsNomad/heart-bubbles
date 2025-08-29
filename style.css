@@ -1,0 +1,35 @@
+body {
+  background-color: aqua;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+span {
+  background: url("https://cdn2.iconfinder.com/data/icons/valentine-day-16/512/578_Heart_Love_Couple_Valentine_Greetings_valentine_valentines_day_love-512.png");
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-size: cover;
+  transform: translate(-50%, -50%);
+  animation: animate 10s linear;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    filter: hue-rotate();
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -5000%);
+    opacity: 0;
+    filter: hue-rotate(-320deg);
+  }
+}
