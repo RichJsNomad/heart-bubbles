@@ -1,5 +1,44 @@
 const bodyEl = document.querySelector("body");
 
+function createParticles(xPos, yPos, count = 5) {
+  for (let i = 0; i < count; i++) {
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+    
+    const randomX = (Math.random() - 0.5) * 100;
+    const randomY = -Math.random() * 80 - 20;
+    
+    particle.style.left = xPos + "px";
+    particle.style.top = yPos + "px";
+    particle.style.setProperty('--random-x', randomX + 'px');
+    particle.style.setProperty('--random-y', randomY + 'px');
+    
+    bodyEl.appendChild(particle);
+    setTimeout(() => {
+      particle.remove();
+    }, 2000);
+  }
+}
+
+function createSparks(xPos, yPos, count = 3) {
+  for (let i = 0; i < count; i++) {
+    setTimeout(() => {
+      const spark = document.createElement("div");
+      spark.classList.add("spark");
+      
+      const randomOffset = (Math.random() - 0.5) * 20;
+      spark.style.left = (xPos + randomOffset) + "px";
+      spark.style.top = (yPos + randomOffset) + "px";
+      spark.style.transform = `rotate(${Math.random() * 360}deg)`;
+      
+      bodyEl.appendChild(spark);
+      setTimeout(() => {
+        spark.remove();
+      }, 1500);
+    }, i * 100);
+  }
+}
+
 function createHeart(xPos, yPos) {
   const spanEl = document.createElement("span");
   spanEl.style.left = xPos + "px";
@@ -17,8 +56,15 @@ function createHeart(xPos, yPos) {
   const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
   spanEl.style.animation = `${randomAnimation} 10s linear`;
   
+  // Создаем частицы при появлении
+  createParticles(xPos, yPos, 3);
+  createSparks(xPos, yPos, 2);
+  
   bodyEl.appendChild(spanEl);
   setTimeout(() => {
+    // Создаем частицы при исчезновении
+    const rect = spanEl.getBoundingClientRect();
+    createParticles(rect.left + rect.width/2, rect.top + rect.height/2, 2);
     spanEl.remove();
   }, 3000);
 }
