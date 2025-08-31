@@ -6,7 +6,6 @@ body {
 }
 
 span {
-  background: url("https://cdn2.iconfinder.com/data/icons/valentine-day-16/512/578_Heart_Love_Couple_Valentine_Greetings_valentine_valentines_day_love-512.png");
   width: 100px;
   height: 100px;
   pointer-events: none;
@@ -16,6 +15,20 @@ span {
   background-size: cover;
   transform: translate(-50%, -50%);
   animation: animate 10s linear;
+}
+
+span.heart1 {
+  background: url("https://cdn2.iconfinder.com/data/icons/valentine-day-16/512/578_Heart_Love_Couple_Valentine_Greetings_valentine_valentines_day_love-512.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+span.heart2 {
+  background: url("https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-512.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @keyframes animate {
