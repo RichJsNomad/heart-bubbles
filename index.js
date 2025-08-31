@@ -47,9 +47,23 @@ function createHeart(xPos, yPos) {
   spanEl.style.height = size + "px";
   spanEl.style.width = size + "px";
   
-  // Рандомно выбираем тип сердечка
-  const heartType = Math.random() < 0.5 ? 'heart1' : 'heart2';
-  spanEl.classList.add(heartType);
+  // Рандомно выбираем между обычными сердечками (с радужными переливами) и тематическими палитрами
+  const styleChoice = Math.random();
+  
+  if (styleChoice < 0.4) {
+    // 40% - обычные сердечки с радужными переливами
+    const heartType = Math.random() < 0.5 ? 'heart1' : 'heart2';
+    spanEl.classList.add(heartType);
+  } else if (styleChoice < 0.65) {
+    // 25% - розовый романтик
+    spanEl.classList.add('romantic');
+  } else if (styleChoice < 0.9) {
+    // 25% - голубая мечта
+    spanEl.classList.add('dream');
+  } else {
+    // 10% - золотая роскошь
+    spanEl.classList.add('luxury');
+  }
   
   // Рандомно выбираем тип анимации
   const animations = ['animate', 'waveMove', 'arcMove'];

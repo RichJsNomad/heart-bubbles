@@ -20,7 +20,11 @@ span.heart1 {
   height: 100px;
   background: url("https://cdn2.iconfinder.com/data/icons/valentine-day-16/512/578_Heart_Love_Couple_Valentine_Greetings_valentine_valentines_day_love-512.png") no-repeat center;
   background-size: contain;
-  filter: drop-shadow(0 0 5px rgba(255, 107, 157, 0.8)) drop-shadow(0 0 10px rgba(255, 107, 157, 0.4));
+  filter: drop-shadow(0 0 5px rgba(255, 107, 157, 0.8)) drop-shadow(0 0 10px rgba(255, 107, 157, 0.4)) hue-rotate(0deg);
+  animation-name: animate, rainbowGlow;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: 1, infinite;
 }
 
 span.heart2 {
@@ -28,7 +32,36 @@ span.heart2 {
   height: 100px;
   background: url("https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-512.png") no-repeat center;
   background-size: contain;
-  filter: drop-shadow(0 0 5px rgba(135, 206, 235, 0.8)) drop-shadow(0 0 10px rgba(135, 206, 235, 0.4));
+  filter: drop-shadow(0 0 5px rgba(135, 206, 235, 0.8)) drop-shadow(0 0 10px rgba(135, 206, 235, 0.4)) hue-rotate(0deg);
+  animation-name: animate, rainbowGlow;
+  animation-duration: 10s, 4s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: 1, infinite;
+}
+
+/* Тематические палитры */
+span.romantic {
+  width: 100px;
+  height: 100px;
+  background: url("https://cdn2.iconfinder.com/data/icons/valentine-day-16/512/578_Heart_Love_Couple_Valentine_Greetings_valentine_valentines_day_love-512.png") no-repeat center;
+  background-size: contain;
+  filter: drop-shadow(0 0 8px rgba(255, 182, 193, 0.9)) drop-shadow(0 0 15px rgba(255, 105, 180, 0.6));
+}
+
+span.dream {
+  width: 100px;
+  height: 100px;
+  background: url("https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-512.png") no-repeat center;
+  background-size: contain;
+  filter: drop-shadow(0 0 8px rgba(173, 216, 230, 0.9)) drop-shadow(0 0 15px rgba(70, 130, 180, 0.6));
+}
+
+span.luxury {
+  width: 100px;
+  height: 100px;
+  background: url("https://cdn2.iconfinder.com/data/icons/valentine-day-16/512/578_Heart_Love_Couple_Valentine_Greetings_valentine_valentines_day_love-512.png") no-repeat center;
+  background-size: contain;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.9)) drop-shadow(0 0 15px rgba(218, 165, 32, 0.7));
 }
 
 span.spongebob {
@@ -146,5 +179,29 @@ span.spongebob {
   100% {
     opacity: 0;
     transform: scale(0) rotate(360deg);
+  }
+}
+
+@keyframes rainbowGlow {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.8)) drop-shadow(0 0 15px rgba(255, 0, 0, 0.4)) hue-rotate(0deg);
+  }
+  16.66% {
+    filter: drop-shadow(0 0 8px rgba(255, 165, 0, 0.8)) drop-shadow(0 0 15px rgba(255, 165, 0, 0.4)) hue-rotate(60deg);
+  }
+  33.33% {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 0, 0.8)) drop-shadow(0 0 15px rgba(255, 255, 0, 0.4)) hue-rotate(120deg);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.8)) drop-shadow(0 0 15px rgba(0, 255, 0, 0.4)) hue-rotate(180deg);
+  }
+  66.66% {
+    filter: drop-shadow(0 0 8px rgba(0, 0, 255, 0.8)) drop-shadow(0 0 15px rgba(0, 0, 255, 0.4)) hue-rotate(240deg);
+  }
+  83.33% {
+    filter: drop-shadow(0 0 8px rgba(75, 0, 130, 0.8)) drop-shadow(0 0 15px rgba(75, 0, 130, 0.4)) hue-rotate(300deg);
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(238, 130, 238, 0.8)) drop-shadow(0 0 15px rgba(238, 130, 238, 0.4)) hue-rotate(360deg);
   }
 }
