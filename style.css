@@ -31,6 +31,13 @@ span.heart2 {
   background-position: center;
 }
 
+span.spongebob {
+  background: url("https://cdn0.iconfinder.com/data/icons/kameleon-free-pack/110/Spongebob-1024.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 @keyframes animate {
   0% {
     transform: translate(-50%, -50%);
